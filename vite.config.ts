@@ -24,6 +24,7 @@ function striqueOverlay(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
+  cacheDir: "/app/.vite",
   plugins: [react(), tailwindcss(), jsxLocPlugin(), striqueOverlay()],
   resolve: {
     alias: {
