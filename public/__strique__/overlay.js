@@ -17,7 +17,12 @@ function init() {
     hoverEl: null,
   };
 
-  const SKIP_TAGS = new Set(['html', 'body', 'head', 'script', 'style', 'link', 'meta', 'noscript']);
+  const SKIP_TAGS = new Set([
+    'html', 'body', 'head', 'script', 'style', 'link', 'meta', 'noscript',
+    // SVG internals — clicking an icon should not select <path>/<circle>/etc.
+    'svg', 'path', 'circle', 'rect', 'line', 'polyline', 'polygon', 'ellipse',
+    'g', 'defs', 'use', 'symbol', 'clippath', 'mask', 'filter',
+  ]);
 
   function setup() {
     injectHighlightLayers();
